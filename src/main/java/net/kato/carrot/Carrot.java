@@ -1,5 +1,10 @@
 package net.kato.carrot;
 
+import net.kato.carrot.block.ModBlocks;
+import net.kato.carrot.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -25,15 +30,18 @@ public class Carrot {
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "hell" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
+
     public Carrot(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        modEventBus.addListener(this::addCreative);
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -55,5 +63,18 @@ public class Carrot {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
     }
-}
 
+    private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SILVER);
+            event.accept(ModItems.BRONZE);
+        }
+
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+    event.accept(ModBlocks.CARROT_BLOCK);
+        }
+    }
+
+
+    }
