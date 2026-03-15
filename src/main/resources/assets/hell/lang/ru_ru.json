@@ -1,4 +1,14 @@
 {
   "item.hell.silver": "Серебро",
-  "item.hell.bronze": "Бронза"
+  "item.hell.bronze": "Бронза",
+
+  "item.hell.wand": "Жезл",
+
+  "block.hell.carrot_block": "Морковный блок",
+  "block.hell.carrot_ore": "Морковная руда",
+  "block.hell.magical_block": "Магический эу",
+  "creative.hell.carrot_deepslate_ore": "Морковная подземная руда",
+
+  "creativetab.hell.carrot": "Морковки",
+
 }

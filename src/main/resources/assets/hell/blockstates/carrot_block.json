@@ -1,5 +1,7 @@
 {
   "variants": {
-
+    "": {
+  "model": "hell:block/carrot_block"
+    }
   }
 }

@@ -1,4 +1,19 @@
 {
-  "item.hell.bronze": "bronze",
-  "item.hell.silver": "silver"
+  "item.hell.bronze": "Bronze",
+  "item.hell.silver": "Silver",
+
+
+  "item.hell.wand": "Wand",
+
+
+
+  "block.hell.carrot_block": "Block of carrot",
+  "block.hell.carrot_ore": "Ore of carrot",
+  "block.hell.magical_block": "Block of Magic",
+  "creative.hell.carrot_deepslate_ore": "Carrot deepslate ore",
+
+
+
+  "creativetab.hell.carrot": "Carrots",
+
 }

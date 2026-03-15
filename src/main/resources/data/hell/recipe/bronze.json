@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cooking time": 200,
+  "experience": 0.25,
+  "group": "carrot",
+  "ingredient": {
+    "item": "hell:carrot_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "hell:bronze"
+  }
+}

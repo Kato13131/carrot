@@ -1,6 +1,7 @@
 package net.kato.carrot;
 
 import net.kato.carrot.block.ModBlocks;
+import net.kato.carrot.item.ModCreativeModeTabs;
 import net.kato.carrot.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -40,6 +41,14 @@ public class Carrot {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+
+        ModCreativeModeTabs.register(modEventBus);
+
+
+
+
+
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -73,6 +82,7 @@ public class Carrot {
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
     event.accept(ModBlocks.CARROT_BLOCK);
+    event.accept(ModBlocks.CARROT_ORE);
         }
     }
 
