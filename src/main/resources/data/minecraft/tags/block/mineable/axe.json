@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "hell:magical_block"
+    "hell:magical_block",
+    "hell:oak_concrete"
   ]
 }
