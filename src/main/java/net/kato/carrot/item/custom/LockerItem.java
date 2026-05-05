@@ -1,8 +1,6 @@
 package net.kato.carrot.item.custom;
 
-import net.kato.carrot.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -12,18 +10,18 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+
 import java.util.Map;
 
-public class ChiselItem extends Item {
-    private static final Map<Block, Block> CHISEL_MAP =
+public class LockerItem extends Item {
+    private static final Map<Block, Block> LOCKER_MAP =
             Map.of(
-                    Blocks.STONE, Blocks.STONE_BRICKS,
-                    Blocks.GOLD_BLOCK, Blocks.DISPENSER,
-                    ModBlocks.CARROT_BLOCK.get(), ModBlocks.CARROT_ORE.get()
+                    Blocks.CHEST, Blocks.BARREL,
+                    Blocks.BARREL, Blocks.CHEST
 
             );
 
-    public ChiselItem(Properties properties) {
+    public LockerItem(Properties properties) {
         super(properties);
     }
 
@@ -32,21 +30,24 @@ public class ChiselItem extends Item {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if (CHISEL_MAP.containsKey(clickedBlock)) {
+        if (LOCKER_MAP.containsKey(clickedBlock)) {
             if(!level.isClientSide()) {
-                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+                level.setBlockAndUpdate(context.getClickedPos(), LOCKER_MAP.get(clickedBlock).defaultBlockState());
 
                 context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), context.getPlayer(),
-                          item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                          item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.HEAD));
 
-                level.playSound(null, context.getClickedPos(), SoundEvents.BLAZE_DEATH, SoundSource.BLOCKS);
+                level.playSound(null, context.getClickedPos(), SoundEvents.ANVIL_PLACE, SoundSource.BLOCKS);
+
+                return InteractionResult.SUCCESS;
 
             }
+
         }
 
 
 
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.PASS;
     }
 }

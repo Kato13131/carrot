@@ -1,10 +1,12 @@
 {
   "item.hell.bronze": "Bronze",
   "item.hell.silver": "Silver",
-
-
+  "item.hell.walahi": "Walahi",
+  "item.hell.locker": "Locker",
+  "item.hell.karrot": "karrot",
   "item.hell.wand": "Wand",
-
+  "item.hell.first_coal": "Foal",
+  "item.hell.second_coal": "Soal",
 
 
   "block.hell.carrot_block": "Block of carrot",

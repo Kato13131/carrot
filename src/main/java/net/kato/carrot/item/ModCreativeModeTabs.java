@@ -26,6 +26,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CARROT_ORE);
                         output.accept(ModItems.WAND);
                         output.accept(ModBlocks.MAGICAL_BLOCK);
+                        output.accept(ModBlocks.OAK_CONCRETE);
+                        output.accept(ModItems.WALAHI);
+                        output.accept(ModItems.LOCKER);
+                        output.accept(ModItems.KARROT);
+                        output.accept(ModItems.FIRST_COAL);
+                        output.accept(ModItems.SECOND_COAL);
 
 
 
