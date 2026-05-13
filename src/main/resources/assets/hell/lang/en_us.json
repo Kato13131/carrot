@@ -17,6 +17,14 @@
 
 
 
-  "creativetab.hell.carrot": "Carrots"
+  "creativetab.hell.carrot": "Carrots",
+
+
+  "tooltip.hell.magic_block.tooltip": "This block is §9pizda§r",
+  "tooltip.hell.chisel.shift_down":"This item do some funny shit",
+  "tooltip.hell.chisel": "Press §eShift§r for more info",
+  "tooltip.hell.karrot.tooltip": "tastes awful"
+
+
 
 }
